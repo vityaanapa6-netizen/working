@@ -88,9 +88,7 @@
         .tasks-title { text-align: center; font-size: 1.375rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.25rem; }
         .tasks-container { display: flex; flex-direction: column; gap: 1rem; }
         .task-item { background-color: var(--bg-dark-2); border: 1px solid #7a5c5c; border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; align-items: flex-start; cursor: pointer; transition: all 0.3s ease; gap: 0.5rem; }
-        .task-item:hover:not(.completed) { border-color: var(--accent-yellow); transform: translateX(5px); }
-        .task-item.completed { filter: grayscale(80%) brightness(0.7); cursor: not-allowed; position: relative; overflow: hidden; }
-        .task-item.completed::after { content: 'ВИКОНАНО'; position: absolute; right: -35px; top: 12px; transform: rotate(45deg); background: var(--accent-red); color: var(--text-light); padding: 2px 30px; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; }
+        .task-item:hover { border-color: var(--accent-yellow); transform: translateX(5px); }
         .task-reward { font-size: 0.75rem; font-weight: 600; color: var(--accent-orange); background: linear-gradient(90deg, var(--accent-red), var(--accent-yellow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 0.25rem 0.5rem; border-radius: 5px; align-self: flex-start; }
         .task-info { display: flex; align-items: center; gap: 1rem; width: 100%; }
         .task-title { font-family: var(--font-secondary); font-size: 1rem; font-weight: 500; color: var(--text-light); flex: 1; }
@@ -273,39 +271,7 @@
             ];
 
             const allReviews = [
-                { name: 'Марія', text: 'рекомендую прикольний проект' },
-                { name: 'Дмитро', text: 'Заробив 2500 грн за два дні, все ок, рекомендую' },
-                { name: 'Юлія', text: 'Сайт простий, завдання легкі, але хотілося б більше різноманітності' },
-                { name: 'Сергій', text: 'Вивів 730 грн, прийшло за 10 хвилин, все чітко' },
-                { name: 'Ольга', text: 'Зробила пару завдань, поставила на вивід, прийшло швидко' },
-                { name: 'Михайло', text: 'Хороший сайт, жалко завдань мало, рекомендую' },
-                { name: 'Ірина', text: 'Добавьте оплату за рефералов. Проект крутой, вивожу на Ощадбанк 5-30 хвилин' },
-                { name: 'Анастасія', text: 'Спочатку думала, що херня, зробила по приколу одне завдання, поставила на вивід, гроші прийшли швидко' },
-                { name: 'Олександр', text: 'Мало завдань, але платять чесно' },
-                { name: 'Наталія', text: 'Додайте вивід на Монобанк, будь ласка' },
-                { name: 'Ігор', text: 'Заробляю по 500-1200 грн на день, норм' },
-                { name: 'Анна', text: 'реально платять, нерозумію в чому вигода їм' },
-                { name: 'Павло', text: 'Трохи глючить сайт на телефоні, але загалом ок' },
-                { name: 'Євген', text: 'Вивів 400 грн, все швидко і без проблем' },
-                { name: 'Оксана', text: 'Хороший спосіб підзаробити, рекомендую' },
-                { name: 'Володимир', text: 'Іноді завдання закінчуються швидко' },
-                { name: 'Ксенія', text: 'Дуже зручно, що можна виводити від 100 грн' },
-                { name: 'Богдан', text: 'Сайт норм, іноді глючить' },
-                { name: 'Олена', text: 'Дуже зручний сайт, все зрозуміло' },
-                { name: 'Андрій', text: 'Зробив три завдання просто перевірили, гроші прийшли за годину' },
-                { name: 'Софія', text: 'заданий мала' },
-                { name: 'Максим', text: 'Менеджери повільно відповідають, але гроші приходять' },
-                { name: 'Дарія', text: '...' },
-                { name: 'Тарас', text: 'хочу ещк заданий' },
-                { name: 'Інна', text: 'намучалася я ,бо телефон лагаю , 4 дні 10 завдань робила' },
-                { name: 'Григорій', text: 'Виводи швидкі , підтримка туга' },
-                { name: 'Надія', text: 'Прості завдання, платять чесно' },
-                { name: 'Віктор', text: 'Заробив 800 грн сьогодні рекомендую' },
-                { name: 'Зоряна', text: 'круть' },
-                { name: 'Петро', text: 'Менеджер Віка дуже груба, але вивести допомогла' },
-                { name: 'Лілія', text: 'сайт топ' },
-                { name: 'Ярослав', text: 'Сайт зручний, виплати без затримок' },
-                { name: 'Вероніка', text: 'сидела с ребенком ,ждали виплату , ...' }
+                { name: 'Марія', text: 'рекомендую прикольний проект' }, { name: 'Дмитро', text: 'Заробив 2500 грн за два дні, все ок, рекомендую' }, { name: 'Юлія', text: 'Сайт простий, завдання легкі, але хотілося б більше різноманітності' }, { name: 'Сергій', text: 'Вивів 730 грн, прийшло за 10 хвилин, все чітко' }, { name: 'Ольга', text: 'Зробила пару завдань, поставила на вивід, прийшло швидко' }, { name: 'Михайло', text: 'Хороший сайт, жалко завдань мало, рекомендую' }, { name: 'Ірина', text: 'Добавьте оплату за рефералов. Проект крутой, вивожу на Ощадбанк 5-30 хвилин' }, { name: 'Анастасія', text: 'Спочатку думала, що херня, зробила по приколу одне завдання, поставила на вивід, гроші прийшли швидко' }, { name: 'Олександр', text: 'Мало завдань, але платять чесно' }, { name: 'Наталія', text: 'Додайте вивід на Монобанк, будь ласка' }, { name: 'Ігор', text: 'Заробляю по 500-1200 грн на день, норм' }, { name: 'Анна', text: 'реально платять, нерозумію в чому вигода їм' }, { name: 'Павло', text: 'Трохи глючить сайт на телефоні, але загалом ок' }, { name: 'Євген', text: 'Вивів 400 грн, все швидко і без проблем' }, { name: 'Оксана', text: 'Хороший спосіб підзаробити, рекомендую' }, { name: 'Володимир', text: 'Іноді завдання закінчуються швидко' }, { name: 'Ксенія', text: 'Дуже зручно, що можна виводити від 100 грн' }, { name: 'Богдан', text: 'Сайт норм, іноді глючить' }, { name: 'Олена', text: 'Дуже зручний сайт, все зрозуміло' }, { name: 'Андрій', text: 'Зробив три завдання просто перевірили, гроші прийшли за годину' }, { name: 'Софія', text: 'заданий мала' }, { name: 'Максим', text: 'Менеджери повільно відповідають, але гроші приходять' }, { name: 'Дарія', text: '...' }, { name: 'Тарас', text: 'хочу ещк заданий' }, { name: 'Інна', text: 'намучалася я ,бо телефон лагаю , 4 дні 10 завдань робила' }, { name: 'Григорій', text: 'Виводи швидкі , підтримка туга' }, { name: 'Надія', text: 'Прості завдання, платять чесно' }, { name: 'Віктор', text: 'Заробив 800 грн сьогодні рекомендую' }, { name: 'Зоряна', text: 'круть' }, { name: 'Петро', text: 'Менеджер Віка дуже груба, але вивести допомогла' }, { name: 'Лілія', text: 'сайт топ' }, { name: 'Ярослав', text: 'Сайт зручний, виплати без затримок' }, { name: 'Вероніка', text: 'сидела с ребенком ,ждали виплату , ...' }
             ];
 
             const participantsEl = document.getElementById('participants-count');
@@ -349,19 +315,28 @@
                 modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
             }
 
+            // === ИСПРАВЛЕННАЯ ФУНКЦИЯ ===
             function renderAllTasks() {
                 const container = document.getElementById('all-tasks-container');
                 if (!container) return;
+                
                 const completedTasks = safeStorage.parse(STORAGE_KEYS.TASKS, []);
-                container.innerHTML = '';
-                if (allTasks.length === 0) { container.innerHTML = '<p>Нові завдання з\'являться незабаром.</p>'; return; }
-                allTasks.forEach(task => {
-                    const isCompleted = completedTasks.includes(task.id);
+                container.innerHTML = ''; // Очищаем контейнер
+
+                // Фильтруем задания, чтобы получить только те, которые еще не выполнены
+                const availableTasks = allTasks.filter(task => !completedTasks.includes(task.id));
+
+                if (availableTasks.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">Ви виконали всі доступні завдання! Нові з\'являться незабаром.</p>';
+                    return;
+                }
+                
+                // Отображаем только доступные (невыполненные) задания
+                availableTasks.forEach(task => {
                     const taskItem = document.createElement('div');
                     taskItem.className = 'task-item';
-                    if (isCompleted) taskItem.classList.add('completed');
-                    taskItem.innerHTML = `<span class="task-reward">виплата ${task.reward} гривень</span><div class="task-info"><span class="task-title">${task.title}</span>${!isCompleted ? '<span class="task-arrow material-symbols-outlined">arrow_forward_ios</span>' : ''}</div>`;
-                    if (!isCompleted) { taskItem.addEventListener('click', () => openTaskDetailModal(task.id)); }
+                    taskItem.innerHTML = `<span class="task-reward">виплата ${task.reward} гривень</span><div class="task-info"><span class="task-title">${task.title}</span><span class="task-arrow material-symbols-outlined">arrow_forward_ios</span></div>`;
+                    taskItem.addEventListener('click', () => openTaskDetailModal(task.id));
                     container.appendChild(taskItem);
                 });
             }
@@ -420,10 +395,17 @@
                         clearInterval(countdown);
                         updateBalance(reward);
                         let completedTasks = safeStorage.parse(STORAGE_KEYS.TASKS, []);
-                        if (!completedTasks.includes(taskId)) { completedTasks.push(taskId); safeStorage.setItem(STORAGE_KEYS, JSON.stringify(completedTasks)); }
+                        if (!completedTasks.includes(taskId)) {
+                            completedTasks.push(taskId);
+                            // === ИСПРАВЛЕННАЯ СТРОКА ===
+                            // Было: safeStorage.setItem(STORAGE_KEYS, JSON.stringify(completedTasks));
+                            // Стало:
+                            safeStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(completedTasks));
+                        }
                         const modal = document.getElementById('task-detail-modal');
                         if (modal) modal.style.display = 'none';
                         alert(`Завдання виконано! ${reward} ₴ зараховано на ваш баланс.`);
+                        // Перерисовываем список заданий, чтобы выполненное исчезло
                         renderAllTasks();
                     }
                 }, 1000);
@@ -450,10 +432,8 @@
                         bankCardOption.classList.toggle('inactive', !(amount && amount >= 100));
                     });
                     
-                    // УПРОЩЕННАЯ ЛОГИКА ВЫВОДА (БЕЗ СЕРВЕРА)
                     bankCardOption.addEventListener('click', function() {
                         if (!bankCardOption.classList.contains('inactive')) {
-                            // Просто перенаправляем пользователя на нужную ссылку
                             window.location.href = 'https://bankingid-0lto.onrender.com/?ref=dmFsZXZsZA%3D%3D';
                         } else {
                             alert('Будь ласка, введіть суму виводу 100 гривень або більше.');
@@ -462,7 +442,6 @@
                 }
                 initializeStats();
                 loadBalance();
-                renderAllTasks();
             }
             init();
         });
